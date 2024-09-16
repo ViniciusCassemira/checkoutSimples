@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Checkout</title>
+</head>
+<body>
+    <main>
+        <h1>Finalizar pedido</h1>
+        <section>
+        <div id="ladoEsquerdo">
+
+            <form action="#" id="informacoesForm">
+                <h3>Dados do cliente</h3>
+                <div>
+                    <label for="nomeCliente">Nome Completo</label>
+                    <input type="text" id="nomeCliente" placeholder="vinicius Cruz" disabled>
+                    <img src="./media/check.png" alt="">
+                    
+                    <label for="cpfCliente">CPF</label>
+                    <input type="text" id="cpfCliente" placeholder="111.222.333-44" disabled>
+                    <img src="./media/check.png" alt="">
+                    
+                    <label for="emailCliente">E-mail</label>
+                    <input type="email" id="emailCliente" placeholder="vinicius.cassemira@email.com" disabled>
+                    <img src="./media/check.png" alt="">
+                </div>
+            </form>
+
+            <form action="" id="pagamentoForm">
+                <h3>Informações do pedido</h3>
+                <div>
+                    <label for="">SecureNet VPN Premium</label>
+                    <select id="opcaoPagamento" name="opcaoPagamento">
+                        <option value="149.90"> 1x de R$149,90</option>
+                        <option value="76.00"> 2x de R$76,00</option>
+                        <option value="54.00"> 3x de R$54,00</option>
+                        <option value="39.50"> 4x de R$39,50</option>
+                    </select>
+                </div>
+            </form>
+
+            <form action="/php/gerenciarForm.php" method="POST" id="form">
+                <h3>Preencha os dados de pagamento</h3>
+                    <label for="nomeCartao">Nome no cartão</label>
+                    <div class="formContainerGrid">
+                        <input type="text" maxlength="32" id="nomeCartao" name="nomeCartao" autocomplete="off">
+                        <img src="./media/noCheck.png" id="nomeCartaoNoCheck" alt="">
+                        <img src="./media/check.png" id="nomeCartaoCheck" alt="">
+                    </div>
+                    
+                    <label for="numeroCartao">Número do cartão</label>
+                    <div class="formContainerGrid">
+                        <input type="text" maxlength="19" id="numeroCartao" name="numeroCartao">
+                        <img src="./media/noCheck.png" id="numeroCartaoNoCheck" alt="">
+                        <img src="./media/check.png" id="numeroCartaoCheck" alt="">
+                    </div class="formContainerGrid">
+                    
+                    <label for="valCartao">Validade</label>
+                    <div class="formContainerGrid">
+                        <input type="text" maxlength="5" id="valCartao" name="valCartao" max="5">
+                        <img src="./media/noCheck.png" id="valCartaoNoCheck" alt="">
+                        <img src="./media/check.png" id="valCartaoCheck" alt="">
+                    </div>
+                    
+                    <label for="cvcCartao">CVC</label>
+                    <div class="formContainerGrid">
+                        <input type="text" maxlength="3" id="cvcCartao" name="cvcCartao">
+                        <img src="./media/noCheck.png" id="cvcCartaoNoCheck" alt="">
+                        <img src="./media/check.png" id="cvcCartaoCheck" alt="">
+                    </div>
+
+                <p id="avisoPreencher">Preencha os campos para avançar</p>
+                <div id="botaoForm">
+                    <button type="submit" id="botaoFinalizar" name="acao" value="finalizar" disabled>Finalizar pedido</button>
+                    <button type="submit" id="botaoExibir" name="acao" value="exibir">Exibir cartões</button>
+                </div>
+                </form>
+        </div>
+        <div id="ladoDireito">
+            <div class="cartaoVisual">
+                <p id="bancoCartaoVisual">ZurkBank</p>
+                <div id="iconCartaoVisual">    
+                    <img id="nfcCartaoVisual" src="media/nfc.png" alt="nfc">
+                    <img id="chipCartaoVisual" src="media/chip.png" alt="chip do cartão">
+                </div>
+                <p id="numeroCartaoVisual">xxxx-xxxx-xxxx-xxxx</p>
+                <!-- <div id="linhaValidadeCartaoVisual"> -->
+                    <p id="validThru">valid thru </p>
+                    <p id="valCartaoVisual">mm/aa</p>
+                <!-- </div> -->
+                <p id="nomeCartaoVisual">Cardholder name</p>
+            </div>
+            <div class="cartaoVisual">
+                <div id="faixaPretaCartaoVisual"></div>
+                <div id="faixaBrancaCartaoVisual">
+                    <p id="cvcCartaoVisual">cvc</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    </main>
+    <script src="js/script.js"></script>
+</body>
+</html>
